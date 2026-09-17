@@ -41,38 +41,79 @@
         <div class="container">
           <h1 class="section-title">Our Menu</h1>
 
-          <div class="tabs">
-            <ul class="tabs__list">
-              <li><button class="tabs__btn tabs__btn--active" type="button">Coffee</button></li>
-              <li><button class="tabs__btn" type="button">Tea</button></li>
-              <li><button class="tabs__btn" type="button">Dessert</button></li>
-            </ul>
-          </div>
+<div class="tabs">
+  <ul class="tabs__list">
+    <li><button class="tabs__btn tabs__btn--active" type="button" data-category="coffee">Coffee</button></li>
+    <li><button class="tabs__btn" type="button" data-category="tea">Tea</button></li>
+    <li><button class="tabs__btn" type="button" data-category="dessert">Dessert</button></li>
+  </ul>
+</div>
 
-        <ul class="cards">
-  <li class="card">
+       <ul class="cards">
+  <!-- Coffee -->
+  <li class="card" data-category="coffee">
     <img src="img/espresso.svg" alt="Espresso" width="300" height="300">
-   <h2 class="card__name">Espresso</h2>
+    <h2 class="card__name">Espresso</h2>
     <p class="card__desc">Rich and bold</p>
     <span class="card__price">$2.50</span>
   </li>
-  <li class="card">
+  <li class="card" data-category="coffee">
     <img src="img/cappuccino.svg" alt="Cappuccino" width="300" height="300">
     <h2 class="card__name">Cappuccino</h2>
     <p class="card__desc">With milk foam</p>
     <span class="card__price">$3.50</span>
   </li>
-  <li class="card">
-   <img src="img/latte.svg" alt="Latte" width="300" height="300">
-   <h2 class="card__name">Latte</h2>
+  <li class="card" data-category="coffee">
+    <img src="img/latte.svg" alt="Latte" width="300" height="300">
+    <h2 class="card__name">Latte</h2>
     <p class="card__desc">Smooth and creamy</p>
     <span class="card__price">$4.00</span>
   </li>
-  <li class="card">
-   <img src="img/americano.svg" alt="Americano" width="300" height="300">
+  <li class="card" data-category="coffee">
+    <img src="img/americano.svg" alt="Americano" width="300" height="300">
     <h2 class="card__name">Americano</h2>
     <p class="card__desc">Black coffee</p>
     <span class="card__price">$2.00</span>
+  </li>
+
+  <!-- Tea -->
+  <li class="card" data-category="tea">
+    <img src="img/espresso.svg" alt="Green Tea" width="300" height="300">
+    <h2 class="card__name">Green Tea</h2>
+    <p class="card__desc">Fresh and light</p>
+    <span class="card__price">$2.00</span>
+  </li>
+  <li class="card" data-category="tea">
+    <img src="img/espresso.svg" alt="Black Tea" width="300" height="300">
+    <h2 class="card__name">Black Tea</h2>
+    <p class="card__desc">Classic and strong</p>
+    <span class="card__price">$2.50</span>
+  </li>
+  <li class="card" data-category="tea">
+    <img src="img/espresso.svg" alt="Herbal Tea" width="300" height="300">
+    <h2 class="card__name">Herbal Tea</h2>
+    <p class="card__desc">Relaxing blend</p>
+    <span class="card__price">$3.00</span>
+  </li>
+
+  <!-- Dessert -->
+  <li class="card" data-category="dessert">
+    <img src="img/espresso.svg" alt="Cheesecake" width="300" height="300">
+    <h2 class="card__name">Cheesecake</h2>
+    <p class="card__desc">Creamy classic</p>
+    <span class="card__price">$4.50</span>
+  </li>
+  <li class="card" data-category="dessert">
+    <img src="img/espresso.svg" alt="Tiramisu" width="300" height="300">
+    <h2 class="card__name">Tiramisu</h2>
+    <p class="card__desc">Coffee-flavoured</p>
+    <span class="card__price">$5.00</span>
+  </li>
+  <li class="card" data-category="dessert">
+    <img src="img/espresso.svg" alt="Muffin" width="300" height="300">
+    <h2 class="card__name">Muffin</h2>
+    <p class="card__desc">With chocolate</p>
+    <span class="card__price">$3.00</span>
   </li>
 </ul>
         </div>
