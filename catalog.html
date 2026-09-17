@@ -137,12 +137,51 @@
   <div class="modal" id="modal" aria-hidden="true">
     <div class="modal__overlay" data-close></div>
     <div class="modal__content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <button class="modal__close" type="button" aria-label="Закрыть" data-close>✕</button>
-      <img class="modal__image" src="" alt="" width="300" height="300">
-      <h2 class="modal__title" id="modal-title"></h2>
-      <p class="modal__desc"></p>
-      <span class="modal__price"></span>
+  <button class="modal__close" type="button" aria-label="Закрыть" data-close>✕</button>
+  <img class="modal__image" src="" alt="" width="300" height="300">
+  <h2 class="modal__title" id="modal-title"></h2>
+  <p class="modal__desc"></p>
+
+  <!-- Размер -->
+  <div class="modal__field">
+    <h3 class="modal__field-title">Size</h3>
+    <div class="modal__options">
+      <label class="modal__option">
+        <input type="radio" name="size" value="s" data-price="0" checked>
+        <span>Small</span>
+      </label>
+      <label class="modal__option">
+        <input type="radio" name="size" value="m" data-price="0.5">
+        <span>Medium +$0.50</span>
+      </label>
+      <label class="modal__option">
+        <input type="radio" name="size" value="l" data-price="1">
+        <span>Large +$1.00</span>
+      </label>
     </div>
+  </div>
+
+  <!-- Добавки -->
+  <div class="modal__field">
+    <h3 class="modal__field-title">Add-ons</h3>
+    <div class="modal__addons">
+      <label class="modal__addon">
+        <input type="checkbox" name="addon" value="syrup" data-price="0.5">
+        <span>Syrup +$0.50</span>
+      </label>
+      <label class="modal__addon">
+        <input type="checkbox" name="addon" value="milk" data-price="0.3">
+        <span>Extra milk +$0.30</span>
+      </label>
+      <label class="modal__addon">
+        <input type="checkbox" name="addon" value="cream" data-price="0.5">
+        <span>Whipped cream +$0.50</span>
+      </label>
+    </div>
+  </div>
+
+  <span class="modal__price"></span>
+</div>
   </div>
 
   <script src="js/main.js"></script>
