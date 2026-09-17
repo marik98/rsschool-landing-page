@@ -32,3 +32,27 @@ loadTheme();
 if (themeToggle) {
   themeToggle.addEventListener('click', toggleTheme);
 }
+// ============================================
+// Бургер-меню
+// ============================================
+const burger = document.querySelector('.burger');
+const nav = document.querySelector('.nav');
+
+function toggleMenu() {
+  const isOpen = nav.classList.toggle('is-open');
+  burger.classList.toggle('is-open', isOpen);
+  burger.setAttribute('aria-expanded', isOpen);
+}
+
+function closeMenu() {
+  nav.classList.remove('is-open');
+  burger.classList.remove('is-open');
+  burger.setAttribute('aria-expanded', 'false');
+}
+
+if (burger && nav) {
+  burger.addEventListener('click', toggleMenu);
+  nav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', closeMenu);
+  });
+}
