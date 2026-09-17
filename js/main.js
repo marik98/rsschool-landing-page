@@ -81,3 +81,53 @@ if (tabs.length && cards.length) {
   // По умолчанию показать кофе
   filterCards('coffee');
 }
+// ============================================
+// Модальное окно
+// ============================================
+const modal = document.getElementById('modal');
+const modalImage = modal?.querySelector('.modal__image');
+const modalTitle = modal?.querySelector('.modal__title');
+const modalDesc = modal?.querySelector('.modal__desc');
+const modalPrice = modal?.querySelector('.modal__price');
+
+function openModal(card) {
+  const img = card.querySelector('.card img, .card__image, img');
+  const name = card.querySelector('.card__name');
+  const desc = card.querySelector('.card__desc');
+  const price = card.querySelector('.card__price');
+
+  modalImage.src = img ? img.src : '';
+  modalImage.alt = img ? img.alt : '';
+  modalTitle.textContent = name ? name.textContent : '';
+  modalDesc.textContent = desc ? desc.textContent : '';
+  modalPrice.textContent = price ? price.textContent : '';
+
+  modal.classList.add('is-open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden'; // блокируем скролл страницы
+}
+
+function closeModal() {
+  modal.classList.remove('is-open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+if (modal) {
+  // Клик по карточке — открыть модалку
+  document.querySelectorAll('.card').forEach((card) => {
+    card.addEventListener('click', () => openModal(card));
+  });
+
+  // Клик по [data-close] (оверлей + крестик) — закрыть
+  modal.querySelectorAll('[data-close]').forEach((el) => {
+    el.addEventListener('click', closeModal);
+  });
+
+  // Esc — закрыть
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+      closeModal();
+    }
+  });
+}
