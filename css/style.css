@@ -390,7 +390,45 @@ section {
   font-weight: 600;
   color: var(--color-accent);
 }
+/* ============================================
+   Бургер-меню
+   ============================================ */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40px;
+  height: 40px;
+  padding: 10px 8px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  transition: background-color var(--transition);
+}
 
+.burger:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+.burger__line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-text);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.burger.is-open .burger__line:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.burger.is-open .burger__line:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.is-open .burger__line:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
 /* ============================================
    Адаптивность
    ============================================ */
