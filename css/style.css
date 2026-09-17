@@ -494,9 +494,10 @@ section {
   inset: 0;
   z-index: 100;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding: 20px;
+  overflow-y: auto;               /* ← прокрутка по вертикали */
   opacity: 0;
   visibility: hidden;
   transition: opacity var(--transition), visibility var(--transition);
@@ -518,6 +519,7 @@ section {
   z-index: 1;
   width: 100%;
   max-width: 400px;
+  margin: auto;                   /* ← центрирует по вертикали */
   padding: 30px;
   text-align: center;
   background-color: var(--color-bg);
