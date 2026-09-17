@@ -56,3 +56,28 @@ if (burger && nav) {
     link.addEventListener('click', closeMenu);
   });
 }
+// ============================================
+// Переключение категорий в каталоге
+// ============================================
+const tabs = document.querySelectorAll('.tabs__btn');
+const cards = document.querySelectorAll('.card');
+
+function filterCards(category) {
+  cards.forEach((card) => {
+    const isMatch = card.dataset.category === category;
+    card.hidden = !isMatch;
+  });
+}
+
+if (tabs.length && cards.length) {
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      tabs.forEach((t) => t.classList.remove('tabs__btn--active'));
+      tab.classList.add('tabs__btn--active');
+      filterCards(tab.dataset.category);
+    });
+  });
+
+  // По умолчанию показать кофе
+  filterCards('coffee');
+}
