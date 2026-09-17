@@ -15,17 +15,23 @@
           <img src="img/logo.svg" alt="Coffee House" width="80" height="40">
         </a>
 
-        <nav class="nav" aria-label="Основная навигация">
-          <ul class="nav__list">
-            <li><a href="index.html" class="nav__link">Home</a></li>
-            <li><a href="catalog.html" class="nav__link nav__link--active">Menu</a></li>
-            <li><a href="index.html#contacts" class="nav__link">Contact</a></li>
-          </ul>
-        </nav>
+        <nav class="nav" id="nav" aria-label="Основная навигация">
+  <ul class="nav__list">
+    <li><a href="index.html" class="nav__link">Home</a></li>
+    <li><a href="catalog.html" class="nav__link">Menu</a></li>
+    <li><a href="#contacts" class="nav__link">Contact</a></li>
+  </ul>
+</nav>
 
-        <button class="theme-toggle" type="button" aria-label="Переключить тему">
-          <span class="theme-toggle__icon"></span>
-        </button>
+<button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+  <span class="burger__line"></span>
+  <span class="burger__line"></span>
+  <span class="burger__line"></span>
+</button>
+
+<button class="theme-toggle" type="button" aria-label="Переключить тему">
+  <span class="theme-toggle__icon"></span>
+</button>
       </div>
     </header>
 
@@ -35,38 +41,79 @@
         <div class="container">
           <h1 class="section-title">Our Menu</h1>
 
-          <div class="tabs">
-            <ul class="tabs__list">
-              <li><button class="tabs__btn tabs__btn--active" type="button">Coffee</button></li>
-              <li><button class="tabs__btn" type="button">Tea</button></li>
-              <li><button class="tabs__btn" type="button">Dessert</button></li>
-            </ul>
-          </div>
+<div class="tabs">
+  <ul class="tabs__list">
+    <li><button class="tabs__btn tabs__btn--active" type="button" data-category="coffee">Coffee</button></li>
+    <li><button class="tabs__btn" type="button" data-category="tea">Tea</button></li>
+    <li><button class="tabs__btn" type="button" data-category="dessert">Dessert</button></li>
+  </ul>
+</div>
 
-        <ul class="cards">
-  <li class="card">
+       <ul class="cards">
+  <!-- Coffee -->
+  <li class="card" data-category="coffee">
     <img src="img/espresso.svg" alt="Espresso" width="300" height="300">
-   <h2 class="card__name">Espresso</h2>
+    <h2 class="card__name">Espresso</h2>
     <p class="card__desc">Rich and bold</p>
     <span class="card__price">$2.50</span>
   </li>
-  <li class="card">
+  <li class="card" data-category="coffee">
     <img src="img/cappuccino.svg" alt="Cappuccino" width="300" height="300">
     <h2 class="card__name">Cappuccino</h2>
     <p class="card__desc">With milk foam</p>
     <span class="card__price">$3.50</span>
   </li>
-  <li class="card">
-   <img src="img/latte.svg" alt="Latte" width="300" height="300">
-   <h2 class="card__name">Latte</h2>
+  <li class="card" data-category="coffee">
+    <img src="img/latte.svg" alt="Latte" width="300" height="300">
+    <h2 class="card__name">Latte</h2>
     <p class="card__desc">Smooth and creamy</p>
     <span class="card__price">$4.00</span>
   </li>
-  <li class="card">
-   <img src="img/americano.svg" alt="Americano" width="300" height="300">
+  <li class="card" data-category="coffee">
+    <img src="img/americano.svg" alt="Americano" width="300" height="300">
     <h2 class="card__name">Americano</h2>
     <p class="card__desc">Black coffee</p>
     <span class="card__price">$2.00</span>
+  </li>
+
+    <!-- Tea -->
+  <li class="card" data-category="tea">
+    <img src="img/tea.svg" alt="Green Tea" width="300" height="300">
+    <h2 class="card__name">Green Tea</h2>
+    <p class="card__desc">Fresh and light</p>
+    <span class="card__price">$2.00</span>
+  </li>
+  <li class="card" data-category="tea">
+    <img src="img/tea.svg" alt="Black Tea" width="300" height="300">
+    <h2 class="card__name">Black Tea</h2>
+    <p class="card__desc">Classic and strong</p>
+    <span class="card__price">$2.50</span>
+  </li>
+  <li class="card" data-category="tea">
+    <img src="img/tea.svg" alt="Herbal Tea" width="300" height="300">
+    <h2 class="card__name">Herbal Tea</h2>
+    <p class="card__desc">Relaxing blend</p>
+    <span class="card__price">$3.00</span>
+  </li>
+
+  <!-- Dessert -->
+  <li class="card" data-category="dessert">
+    <img src="img/dessert.svg" alt="Cheesecake" width="300" height="300">
+    <h2 class="card__name">Cheesecake</h2>
+    <p class="card__desc">Creamy classic</p>
+    <span class="card__price">$4.50</span>
+  </li>
+  <li class="card" data-category="dessert">
+    <img src="img/dessert.svg" alt="Tiramisu" width="300" height="300">
+    <h2 class="card__name">Tiramisu</h2>
+    <p class="card__desc">Coffee-flavoured</p>
+    <span class="card__price">$5.00</span>
+  </li>
+  <li class="card" data-category="dessert">
+    <img src="img/dessert.svg" alt="Muffin" width="300" height="300">
+    <h2 class="card__name">Muffin</h2>
+    <p class="card__desc">With chocolate</p>
+    <span class="card__price">$3.00</span>
   </li>
 </ul>
         </div>
@@ -74,7 +121,7 @@
 
     </main>
 
-    <footer class="footer" id="contacts">
+      <footer class="footer" id="contacts">
       <div class="container footer__inner">
         <a href="https://github.com/marik98" class="footer__link">GitHub</a>
         <span class="footer__year">© 2026</span>
@@ -85,6 +132,58 @@
     </footer>
 
   </div>
+
+  <!-- Модальное окно -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal__overlay" data-close></div>
+    <div class="modal__content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <button class="modal__close" type="button" aria-label="Закрыть" data-close>✕</button>
+  <img class="modal__image" src="" alt="" width="300" height="300">
+  <h2 class="modal__title" id="modal-title"></h2>
+  <p class="modal__desc"></p>
+
+  <!-- Размер -->
+  <div class="modal__field">
+    <h3 class="modal__field-title">Size</h3>
+    <div class="modal__options">
+      <label class="modal__option">
+        <input type="radio" name="size" value="s" data-price="0" checked>
+        <span>Small</span>
+      </label>
+      <label class="modal__option">
+        <input type="radio" name="size" value="m" data-price="0.5">
+        <span>Medium +$0.50</span>
+      </label>
+      <label class="modal__option">
+        <input type="radio" name="size" value="l" data-price="1">
+        <span>Large +$1.00</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Добавки -->
+  <div class="modal__field">
+    <h3 class="modal__field-title">Add-ons</h3>
+    <div class="modal__addons">
+      <label class="modal__addon">
+        <input type="checkbox" name="addon" value="syrup" data-price="0.5">
+        <span>Syrup +$0.50</span>
+      </label>
+      <label class="modal__addon">
+        <input type="checkbox" name="addon" value="milk" data-price="0.3">
+        <span>Extra milk +$0.30</span>
+      </label>
+      <label class="modal__addon">
+        <input type="checkbox" name="addon" value="cream" data-price="0.5">
+        <span>Whipped cream +$0.50</span>
+      </label>
+    </div>
+  </div>
+
+  <span class="modal__price"></span>
+</div>
+  </div>
+
   <script src="js/main.js"></script>
 </body>
 </html>
