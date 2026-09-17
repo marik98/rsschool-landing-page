@@ -276,7 +276,123 @@ section {
 }
 
 /* ============================================
-   Адаптивность (начало)
+   Hero — раскладка
+   ============================================ */
+.hero__inner {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero__content {
+  flex: 1;
+}
+
+.hero__image {
+  flex: 1;
+  min-width: 0;
+  text-align: right;
+}
+
+.hero__image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 50%;
+}
+
+/* ============================================
+   About и App
+   ============================================ */
+.about__text,
+.app__text {
+  max-width: 700px;
+  font-size: 18px;
+  color: var(--color-text-secondary);
+}
+
+.app .btn {
+  margin-top: 24px;
+}
+
+/* ============================================
+   Слайдер на главной
+   ============================================ */
+.slider__list {
+  display: flex;
+  gap: 40px;
+  padding: 20px 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.slider__item {
+  flex: 0 0 300px;
+  text-align: center;
+  scroll-snap-align: center;
+}
+
+.slider__name {
+  margin: 20px 0 8px;
+  font-size: 24px;
+}
+
+.slider__desc {
+  color: var(--color-text-secondary);
+}
+
+.slider__price {
+  display: block;
+  margin-top: 8px;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+/* ============================================
+   Карточки каталога
+   ============================================ */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.card {
+  padding: 20px;
+  text-align: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: transform var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card img {
+  margin: 0 auto;
+  border-radius: var(--radius-md);
+}
+
+.card__name {
+  margin: 16px 0 8px;
+  font-size: 22px;
+}
+
+.card__desc {
+  color: var(--color-text-secondary);
+}
+
+.card__price {
+  display: block;
+  margin-top: 8px;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+/* ============================================
+   Адаптивность
    ============================================ */
 @media (max-width: 768px) {
   :root {
@@ -293,6 +409,14 @@ section {
 
   .nav__list {
     gap: 20px;
+  }
+
+  .hero__inner {
+    flex-direction: column;
+  }
+
+  .hero__image {
+    text-align: center;
   }
 }
 
