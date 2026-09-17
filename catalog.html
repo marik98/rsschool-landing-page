@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee House — Меню</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="wrapper">
+
+    <header class="header">
+      <div class="container header__inner">
+        <a href="index.html" class="logo" aria-label="Coffee House — на главную">
+          <img src="img/logo.svg" alt="Coffee House" width="80" height="40">
+        </a>
+
+        <nav class="nav" aria-label="Основная навигация">
+          <ul class="nav__list">
+            <li><a href="index.html" class="nav__link">Home</a></li>
+            <li><a href="catalog.html" class="nav__link nav__link--active">Menu</a></li>
+            <li><a href="index.html#contacts" class="nav__link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <button class="theme-toggle" type="button" aria-label="Переключить тему">
+          <span class="theme-toggle__icon"></span>
+        </button>
+      </div>
+    </header>
+
+    <main class="main">
+
+      <section class="menu" id="menu">
+        <div class="container">
+          <h1 class="section-title">Our Menu</h1>
+
+          <div class="tabs">
+            <ul class="tabs__list">
+              <li><button class="tabs__btn tabs__btn--active" type="button">Coffee</button></li>
+              <li><button class="tabs__btn" type="button">Tea</button></li>
+              <li><button class="tabs__btn" type="button">Dessert</button></li>
+            </ul>
+          </div>
+
+        <ul class="cards">
+  <li class="card">
+    <img src="img/espresso.svg" alt="Espresso" width="300" height="300">
+   <h2 class="card__name">Espresso</h2>
+    <p class="card__desc">Rich and bold</p>
+    <span class="card__price">$2.50</span>
+  </li>
+  <li class="card">
+    <img src="img/cappuccino.svg" alt="Cappuccino" width="300" height="300">
+    <h2 class="card__name">Cappuccino</h2>
+    <p class="card__desc">With milk foam</p>
+    <span class="card__price">$3.50</span>
+  </li>
+  <li class="card">
+   <img src="img/latte.svg" alt="Latte" width="300" height="300">
+   <h2 class="card__name">Latte</h2>
+    <p class="card__desc">Smooth and creamy</p>
+    <span class="card__price">$4.00</span>
+  </li>
+  <li class="card">
+   <img src="img/americano.svg" alt="Americano" width="300" height="300">
+    <h2 class="card__name">Americano</h2>
+    <p class="card__desc">Black coffee</p>
+    <span class="card__price">$2.00</span>
+  </li>
+</ul>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer" id="contacts">
+      <div class="container footer__inner">
+        <a href="https://github.com/marik98" class="footer__link">GitHub</a>
+        <span class="footer__year">© 2026</span>
+        <a href="https://rs.school/" class="footer__logo">
+          <img src="img/rs-logo.svg" alt="RS School" width="60" height="30">
+        </a>
+      </div>
+    </footer>
+
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>

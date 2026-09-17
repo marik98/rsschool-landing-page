@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee House — Главная</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="wrapper">
+
+    <header class="header">
+      <div class="container header__inner">
+        <a href="index.html" class="logo" aria-label="Coffee House — на главную">
+          <img src="img/logo.svg" alt="Coffee House" width="80" height="40">
+        </a>
+
+        <nav class="nav" aria-label="Основная навигация">
+          <ul class="nav__list">
+            <li><a href="index.html" class="nav__link">Home</a></li>
+            <li><a href="catalog.html" class="nav__link">Menu</a></li>
+            <li><a href="#contacts" class="nav__link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <button class="theme-toggle" type="button" aria-label="Переключить тему">
+          <span class="theme-toggle__icon"></span>
+        </button>
+      </div>
+    </header>
+
+    <main class="main">
+
+   <section class="hero" id="hero">
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <h1 class="hero__title">Enjoy your favourite coffee</h1>
+      <p class="hero__text">Discover the taste of world's best coffee</p>
+      <a href="catalog.html" class="btn">Menu</a>
+    </div>
+    <div class="hero__image">
+      <img src="img/coffee.svg" alt="Чашка кофе" width="500" height="500">
+    </div>
+  </div>
+</section>
+
+            <section class="favourites" id="favourites">
+        <div class="container">
+          <h2 class="section-title section-title--center">Choose your favourite</h2>
+
+          <ul class="slider__list">
+            <li class="slider__item">
+              <img src="img/espresso.svg" alt="Espresso" width="300" height="300">
+              <h3 class="slider__name">Espresso</h3>
+              <p class="slider__desc">Rich and bold</p>
+              <span class="slider__price">$2.50</span>
+            </li>
+            <li class="slider__item">
+              <img src="img/cappuccino.svg" alt="Cappuccino" width="300" height="300">
+              <h3 class="slider__name">Cappuccino</h3>
+              <p class="slider__desc">With milk foam</p>
+              <span class="slider__price">$3.50</span>
+            </li>
+            <li class="slider__item">
+              <img src="img/latte.svg" alt="Latte" width="300" height="300">
+              <h3 class="slider__name">Latte</h3>
+              <p class="slider__desc">Smooth and creamy</p>
+              <span class="slider__price">$4.00</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+     <section class="about" id="about">
+  <div class="container">
+    <h2 class="section-title">About</h2>
+    <p class="about__text">
+      We are a small coffee shop, roasting our own beans since 2015.
+      Our goal is to make the best cup of coffee in town and share our passion with you.
+    </p>
+  </div>
+</section>
+     
+      <section class="app" id="app">
+  <div class="container">
+    <h2 class="section-title">Download our app</h2>
+    <p class="app__text">
+      Order ahead, collect bonuses and get exclusive discounts. Available on iOS and Android.
+    </p>
+    <a href="#" class="btn">Get the app</a>
+  </div>
+</section>
+
+    </main>
+
+    <footer class="footer" id="contacts">
+      <div class="container footer__inner">
+        <a href="https://github.com/marik98" class="footer__link">GitHub</a>
+        <span class="footer__year">© 2026</span>
+        <a href="https://rs.school/" class="footer__logo">
+          <img src="img/rs-logo.svg" alt="RS School" width="60" height="30">
+        </a>
+      </div>
+    </footer>
+
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>
