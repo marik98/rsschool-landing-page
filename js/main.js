@@ -90,21 +90,52 @@ const modalTitle = modal?.querySelector('.modal__title');
 const modalDesc = modal?.querySelector('.modal__desc');
 const modalPrice = modal?.querySelector('.modal__price');
 
+const sizeInputs = modal ? modal.querySelectorAll('input[name="size"]') : [];
+const addonInputs = modal ? modal.querySelectorAll('input[name="addon"]') : [];
+
+let basePrice = 0;
+
+function updatePrice() {
+  const sizeAdd = parseFloat(
+    modal.querySelector('input[name="size"]:checked')?.dataset.price || 0
+  );
+  let addonsAdd = 0;
+  modal.querySelectorAll('input[name="addon"]:checked').forEach((cb) => {
+    addonsAdd += parseFloat(cb.dataset.price || 0);
+  });
+
+  const total = basePrice + sizeAdd + addonsAdd;
+  modalPrice.textContent = `$${total.toFixed(2)}`;
+}
+
+function resetOptions() {
+  const smallSize = modal.querySelector('input[name="size"][value="s"]');
+  if (smallSize) smallSize.checked = true;
+
+  modal.querySelectorAll('input[name="addon"]').forEach((cb) => {
+    cb.checked = false;
+  });
+}
+
 function openModal(card) {
-  const img = card.querySelector('.card img, .card__image, img');
+  const img = card.querySelector('img');
   const name = card.querySelector('.card__name');
   const desc = card.querySelector('.card__desc');
-  const price = card.querySelector('.card__price');
+  const priceEl = card.querySelector('.card__price');
 
   modalImage.src = img ? img.src : '';
   modalImage.alt = img ? img.alt : '';
   modalTitle.textContent = name ? name.textContent : '';
   modalDesc.textContent = desc ? desc.textContent : '';
-  modalPrice.textContent = price ? price.textContent : '';
+
+  basePrice = priceEl ? parseFloat(priceEl.textContent.replace('$', '')) : 0;
+
+  resetOptions();
+  updatePrice();
 
   modal.classList.add('is-open');
   modal.setAttribute('aria-hidden', 'false');
-  document.body.style.overflow = 'hidden'; // блокируем скролл страницы
+  document.body.style.overflow = 'hidden';
 }
 
 function closeModal() {
@@ -114,20 +145,20 @@ function closeModal() {
 }
 
 if (modal) {
-  // Клик по карточке — открыть модалку
   document.querySelectorAll('.card').forEach((card) => {
     card.addEventListener('click', () => openModal(card));
   });
 
-  // Клик по [data-close] (оверлей + крестик) — закрыть
   modal.querySelectorAll('[data-close]').forEach((el) => {
     el.addEventListener('click', closeModal);
   });
 
-  // Esc — закрыть
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal.classList.contains('is-open')) {
       closeModal();
     }
   });
+
+  sizeInputs.forEach((input) => input.addEventListener('change', updatePrice));
+  addonInputs.forEach((input) => input.addEventListener('change', updatePrice));
 }
