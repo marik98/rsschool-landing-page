@@ -384,11 +384,8 @@ section {
   color: var(--color-text-secondary);
 }
 
-.card__price {
-  display: block;
-  margin-top: 8px;
-  font-weight: 600;
-  color: var(--color-accent);
+.card[hidden] {
+  display: none;
 }
 /* ============================================
    Бургер-меню
