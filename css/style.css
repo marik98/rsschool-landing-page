@@ -569,6 +569,53 @@ section {
   font-weight: 600;
   color: var(--color-accent);
 }
+.modal__field {
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.modal__field-title {
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.modal__options,
+.modal__addons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.modal__option,
+.modal__addon {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background-color var(--transition), border-color var(--transition);
+}
+
+.modal__option:hover,
+.modal__addon:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+.modal__option:has(input:checked),
+.modal__addon:has(input:checked) {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+  border-color: var(--color-text);
+}
+
+.modal__option input,
+.modal__addon input {
+  margin: 0;
+}
 
 @media (max-width: 480px) {
   .section-title {
