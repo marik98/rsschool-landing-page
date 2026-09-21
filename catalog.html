@@ -31,46 +31,149 @@
 
     <main class="main">
 
-      <section class="menu" id="menu">
-        <div class="container">
-          <h1 class="section-title">Our Menu</h1>
+     <section class="menu" id="menu">
+  <div class="container">
+    <h1 class="section-title">
+      Behind each of our cups hides an <em>amazing surprise</em>
+    </h1>
 
-          <div class="tabs">
-            <ul class="tabs__list">
-              <li><button class="tabs__btn tabs__btn--active" type="button">Coffee</button></li>
-              <li><button class="tabs__btn" type="button">Tea</button></li>
-              <li><button class="tabs__btn" type="button">Dessert</button></li>
-            </ul>
-          </div>
+    <div class="tabs">
+      <ul class="tabs__list">
+        <li><button class="tabs__btn tabs__btn--active" type="button" data-category="coffee">Coffee</button></li>
+        <li><button class="tabs__btn" type="button" data-category="tea">Tea</button></li>
+        <li><button class="tabs__btn" type="button" data-category="dessert">Dessert</button></li>
+      </ul>
+    </div>
 
-        <ul class="cards">
-  <li class="card">
-    <img src="img/espresso.svg" alt="Espresso" width="300" height="300">
-   <h2 class="card__name">Espresso</h2>
-    <p class="card__desc">Rich and bold</p>
-    <span class="card__price">$2.50</span>
-  </li>
-  <li class="card">
-    <img src="img/cappuccino.svg" alt="Cappuccino" width="300" height="300">
-    <h2 class="card__name">Cappuccino</h2>
-    <p class="card__desc">With milk foam</p>
-    <span class="card__price">$3.50</span>
-  </li>
-  <li class="card">
-   <img src="img/latte.svg" alt="Latte" width="300" height="300">
-   <h2 class="card__name">Latte</h2>
-    <p class="card__desc">Smooth and creamy</p>
-    <span class="card__price">$4.00</span>
-  </li>
-  <li class="card">
-   <img src="img/americano.svg" alt="Americano" width="300" height="300">
-    <h2 class="card__name">Americano</h2>
-    <p class="card__desc">Black coffee</p>
-    <span class="card__price">$2.00</span>
-  </li>
-</ul>
-        </div>
-      </section>
+    <ul class="cards">
+      <!-- Coffee -->
+      <li class="card" data-category="coffee">
+        <img class="card__img" src="img/coffee-irish.jpg" alt="Irish coffee" width="300" height="300">
+        <h2 class="card__name">Irish coffee</h2>
+        <p class="card__desc">Fragrant black coffee with Jameson Irish whiskey and whipped milk</p>
+        <span class="card__price">$7.00</span>
+      </li>
+      <li class="card" data-category="coffee">
+        <img class="card__img" src="img/coffee-kahlua.jpg" alt="Kahlua coffee" width="300" height="300">
+        <h2 class="card__name">Kahlua coffee</h2>
+        <p class="card__desc">Classic coffee with milk and Kahlua liqueur under a cap of frothed milk</p>
+        <span class="card__price">$7.00</span>
+      </li>
+      <li class="card" data-category="coffee">
+        <img class="card__img" src="img/coffee-honey-raf.jpg" alt="Honey raf" width="300" height="300">
+        <h2 class="card__name">Honey raf</h2>
+        <p class="card__desc">Espresso with frothed milk, cream and aromatic honey</p>
+        <span class="card__price">$5.50</span>
+      </li>
+      <li class="card" data-category="coffee">
+        <img class="card__img" src="img/coffee-ice-cappuccino.jpg" alt="Ice cappuccino" width="300" height="300">
+        <h2 class="card__name">Ice cappuccino</h2>
+        <p class="card__desc">Cappuccino with soft thick foam in summer version with ice</p>
+        <span class="card__price">$5.00</span>
+      </li>
+      <li class="card" data-category="coffee">
+        <img class="card__img" src="img/coffee-espresso.jpg" alt="Espresso" width="300" height="300">
+        <h2 class="card__name">Espresso</h2>
+        <p class="card__desc">Classic black coffee</p>
+        <span class="card__price">$4.50</span>
+      </li>
+      <li class="card" data-category="coffee">
+        <img class="card__img" src="img/coffee-latte.jpg" alt="Latte" width="300" height="300">
+        <h2 class="card__name">Latte</h2>
+        <p class="card__desc">Fresco coffee with the addition of steamed milk and dense milk foam</p>
+        <span class="card__price">$5.50</span>
+      </li>
+      <li class="card" data-category="coffee">
+        <img class="card__img" src="img/coffee-latte-macchiato.jpg" alt="Latte macchiato" width="300" height="300">
+        <h2 class="card__name">Latte macchiato</h2>
+        <p class="card__desc">Espresso with frothed milk and chocolate</p>
+        <span class="card__price">$5.50</span>
+      </li>
+      <li class="card" data-category="coffee">
+        <img class="card__img" src="img/coffee-cognac.jpg" alt="Coffee with cognac" width="300" height="300">
+        <h2 class="card__name">Coffee with cognac</h2>
+        <p class="card__desc">Fragrant black coffee with cognac and whipped cream</p>
+        <span class="card__price">$6.50</span>
+      </li>
+
+      <!-- Tea -->
+      <li class="card" data-category="tea">
+        <img class="card__img" src="img/tea-moroccan.png" alt="Moroccan" width="300" height="300">
+        <h2 class="card__name">Moroccan</h2>
+        <p class="card__desc">Fragrant black tea with the addition of tangerine, cinnamon, honey, lemon and mint</p>
+        <span class="card__price">$4.50</span>
+      </li>
+      <li class="card" data-category="tea">
+        <img class="card__img" src="img/tea-ginger.png" alt="Ginger" width="300" height="300">
+        <h2 class="card__name">Ginger</h2>
+        <p class="card__desc">Original black tea with fresh ginger, lemon and honey</p>
+        <span class="card__price">$5.00</span>
+      </li>
+      <li class="card" data-category="tea">
+        <img class="card__img" src="img/tea-cranberry.png" alt="Cranberry" width="300" height="300">
+        <h2 class="card__name">Cranberry</h2>
+        <p class="card__desc">Invigorating black tea with cranberry and honey</p>
+        <span class="card__price">$5.00</span>
+      </li>
+      <li class="card" data-category="tea">
+        <img class="card__img" src="img/tea-sea-buckthorn.png" alt="Sea buckthorn" width="300" height="300">
+        <h2 class="card__name">Sea buckthorn</h2>
+        <p class="card__desc">Toning sweet black tea with sea buckthorn, fresh thyme and cinnamon</p>
+        <span class="card__price">$5.50</span>
+      </li>
+
+      <!-- Dessert -->
+      <li class="card" data-category="dessert">
+        <img class="card__img" src="img/dessert-marble-cheesecake.png" alt="Marble cheesecake" width="300" height="300">
+        <h2 class="card__name">Marble cheesecake</h2>
+        <p class="card__desc">Philadelphia cheese with lemon zest on a light sponge cake and red currant jam</p>
+        <span class="card__price">$3.50</span>
+      </li>
+      <li class="card" data-category="dessert">
+        <img class="card__img" src="img/dessert-red-velvet.png" alt="Red velvet" width="300" height="300">
+        <h2 class="card__name">Red velvet</h2>
+        <p class="card__desc">Layer cake with cream cheese frosting</p>
+        <span class="card__price">$4.00</span>
+      </li>
+      <li class="card" data-category="dessert">
+        <img class="card__img" src="img/dessert-cheesecakes.png" alt="Cheesecakes" width="300" height="300">
+        <h2 class="card__name">Cheesecakes</h2>
+        <p class="card__desc">Soft cottage cheese pancakes with sour cream and fresh berries and sprinkled with powdered sugar</p>
+        <span class="card__price">$4.50</span>
+      </li>
+      <li class="card" data-category="dessert">
+        <img class="card__img" src="img/dessert-creme-brulee.png" alt="Creme brulee" width="300" height="300">
+        <h2 class="card__name">Creme brulee</h2>
+        <p class="card__desc">Delicate creamy dessert in a caramel basket with wild berries</p>
+        <span class="card__price">$4.00</span>
+      </li>
+      <li class="card" data-category="dessert">
+        <img class="card__img" src="img/dessert-pancakes.png" alt="Pancakes" width="300" height="300">
+        <h2 class="card__name">Pancakes</h2>
+        <p class="card__desc">Tender pancakes with strawberry jam and fresh strawberries</p>
+        <span class="card__price">$4.50</span>
+      </li>
+      <li class="card" data-category="dessert">
+        <img class="card__img" src="img/dessert-honey-cake.png" alt="Honey cake" width="300" height="300">
+        <h2 class="card__name">Honey cake</h2>
+        <p class="card__desc">Classic honey cake with delicate custard</p>
+        <span class="card__price">$4.50</span>
+      </li>
+      <li class="card" data-category="dessert">
+        <img class="card__img" src="img/dessert-chocolate-cake.png" alt="Chocolate cake" width="300" height="300">
+        <h2 class="card__name">Chocolate cake</h2>
+        <p class="card__desc">Cake with hot chocolate filling and nuts with dried apricots</p>
+        <span class="card__price">$5.50</span>
+      </li>
+      <li class="card" data-category="dessert">
+        <img class="card__img" src="img/dessert-black-forest.png" alt="Black forest" width="300" height="300">
+        <h2 class="card__name">Black forest</h2>
+        <p class="card__desc">A combination of thin sponge cake with cherry jam and light chocolate</p>
+        <span class="card__price">$6.50</span>
+      </li>
+    </ul>
+  </div>
+</section>
 
     </main>
 
