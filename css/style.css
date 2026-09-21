@@ -615,6 +615,140 @@ section {
 }
 
 /* ============================================
+   Модальное окно
+   ============================================ */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition), visibility var(--transition);
+}
+
+.modal.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  padding: 30px;
+  text-align: center;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  border-radius: var(--radius-lg);
+  transform: translateY(20px);
+  transition: transform var(--transition);
+}
+
+.modal.is-open .modal__content {
+  transform: translateY(0);
+}
+
+.modal__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  font-size: 20px;
+  line-height: 1;
+  border-radius: 50%;
+  background-color: var(--color-bg-secondary);
+  transition: background-color var(--transition);
+}
+
+.modal__close:hover {
+  background-color: var(--color-border);
+}
+
+.modal__image {
+  margin: 0 auto 20px;
+  border-radius: var(--radius-md);
+}
+
+.modal__title {
+  margin-bottom: 12px;
+  font-size: 28px;
+}
+
+.modal__desc {
+  margin-bottom: 12px;
+  color: var(--color-text-secondary);
+}
+
+.modal__price {
+  display: block;
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.modal__field {
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.modal__field-title {
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.modal__options,
+.modal__addons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.modal__option,
+.modal__addon {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background-color var(--transition), border-color var(--transition);
+}
+
+.modal__option:hover,
+.modal__addon:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+.modal__option:has(input:checked),
+.modal__addon:has(input:checked) {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+  border-color: var(--color-text);
+}
+
+.modal__option input,
+.modal__addon input {
+  margin: 0;
+}
+/* ============================================
    Адаптивность
    ============================================ */
 @media (max-width: 768px) {
