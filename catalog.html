@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee House — Меню</title>
+<link rel="icon" type="image/png" href="img/logo.png">
+<link rel="stylesheet" href="css/style.css?v=2">
+</head>
+<body>
+  <div class="wrapper">
+
+    <header class="header">
+      <div class="container header__inner">
+       <a href="index.html" class="logo" aria-label="Coffee House — на главную">
+  <img src="img/logo.png" alt="Coffee House" width="100" height="60">
+</a>
+
+     <nav class="nav" id="nav" aria-label="Основная навигация">
+  <ul class="nav__list">
+    <li><a href="index.html" class="nav__link">Home</a></li>
+    <li><a href="catalog.html" class="nav__link">Menu</a></li>
+    <li><a href="#contacts" class="nav__link">Contact</a></li>
+  </ul>
+</nav>
+
+<button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+  <span class="burger__line"></span>
+  <span class="burger__line"></span>
+  <span class="burger__line"></span>
+</button>
+
+<button class="theme-toggle" type="button" aria-label="Переключить тему">
+  <span class="theme-toggle__icon"></span>
+</button>
+      </div>
+    </header>
+
+    <main class="main">
+
+     <section class="menu" id="menu">
+  <div class="container">
+    <h1 class="section-title">
+      Behind each of our cups hides an <em>amazing surprise</em>
+    </h1>
+
+   <div class="tabs">
+  <ul class="tabs__list">
+    <li>
+      <button class="tabs__btn tabs__btn--active" type="button" data-category="coffee">
+        <svg class="tabs__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 8h16l-2 10H6L4 8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M9 8V6a3 3 0 0 1 6 0v2" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        Coffee
+      </button>
+    </li>
+    <li>
+      <button class="tabs__btn" type="button" data-category="tea">
+        <svg class="tabs__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 3v8M8 5v6M16 5v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M4 15h16v3a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        </svg>
+        Tea
+      </button>
+    </li>
+    <li>
+      <button class="tabs__btn" type="button" data-category="dessert">
+        <svg class="tabs__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 13h14v6H5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M7 13V9a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v4" stroke="currentColor" stroke-width="2"/>
+          <circle cx="12" cy="5" r="1" fill="currentColor"/>
+        </svg>
+        Dessert
+      </button>
+    </li>
+  </ul>
+</div>
+
+    <ul class="cards">
+      <!-- Coffee -->
+      <li class="card" data-category="coffee">
+        <img class="card__img" src="img/coffee-irish.jpg" alt="Irish coffee" width="300" height="300">
+        <h2 class="card__name">Irish coffee</h2>
+        <p class="card__desc">Fragrant black coffee with Jameson Irish whiskey and whipped milk</p>
+        <span class="card__price">$7.00</span>
+      </li>
+      <li class="card" data-category="coffee">
+        <img class="card__img" src="img/coffee-kahlua.jpg" alt="Kahlua coffee" width="300" height="300">
+        <h2 class="card__name">Kahlua coffee</h2>
+        <p class="card__desc">Classic coffee with milk and Kahlua liqueur under a cap of frothed milk</p>
+        <span class="card__price">$7.00</span>
+      </li>
+      <li class="card" data-category="coffee">
+        <img class="card__img" src="img/coffee-honey-raf.jpg" alt="Honey raf" width="300" height="300">
+        <h2 class="card__name">Honey raf</h2>
+        <p class="card__desc">Espresso with frothed milk, cream and aromatic honey</p>
+        <span class="card__price">$5.50</span>
+      </li>
+      <li class="card" data-category="coffee">
+        <img class="card__img" src="img/coffee-ice-cappuccino.jpg" alt="Ice cappuccino" width="300" height="300">
+        <h2 class="card__name">Ice cappuccino</h2>
+        <p class="card__desc">Cappuccino with soft thick foam in summer version with ice</p>
+        <span class="card__price">$5.00</span>
+      </li>
+      <li class="card" data-category="coffee">
+        <img class="card__img" src="img/coffee-espresso.jpg" alt="Espresso" width="300" height="300">
+        <h2 class="card__name">Espresso</h2>
+        <p class="card__desc">Classic black coffee</p>
+        <span class="card__price">$4.50</span>
+      </li>
+      <li class="card" data-category="coffee">
+        <img class="card__img" src="img/coffee-latte.jpg" alt="Latte" width="300" height="300">
+        <h2 class="card__name">Latte</h2>
+        <p class="card__desc">Fresco coffee with the addition of steamed milk and dense milk foam</p>
+        <span class="card__price">$5.50</span>
+      </li>
+      <li class="card" data-category="coffee">
+        <img class="card__img" src="img/coffee-latte-macchiato.jpg" alt="Latte macchiato" width="300" height="300">
+        <h2 class="card__name">Latte macchiato</h2>
+        <p class="card__desc">Espresso with frothed milk and chocolate</p>
+        <span class="card__price">$5.50</span>
+      </li>
+      <li class="card" data-category="coffee">
+        <img class="card__img" src="img/coffee-cognac.jpg" alt="Coffee with cognac" width="300" height="300">
+        <h2 class="card__name">Coffee with cognac</h2>
+        <p class="card__desc">Fragrant black coffee with cognac and whipped cream</p>
+        <span class="card__price">$6.50</span>
+      </li>
+
+      <!-- Tea -->
+      <li class="card" data-category="tea">
+        <img class="card__img" src="img/tea-moroccan.png" alt="Moroccan" width="300" height="300">
+        <h2 class="card__name">Moroccan</h2>
+        <p class="card__desc">Fragrant black tea with the addition of tangerine, cinnamon, honey, lemon and mint</p>
+        <span class="card__price">$4.50</span>
+      </li>
+      <li class="card" data-category="tea">
+        <img class="card__img" src="img/tea-ginger.png" alt="Ginger" width="300" height="300">
+        <h2 class="card__name">Ginger</h2>
+        <p class="card__desc">Original black tea with fresh ginger, lemon and honey</p>
+        <span class="card__price">$5.00</span>
+      </li>
+      <li class="card" data-category="tea">
+        <img class="card__img" src="img/tea-cranberry.png" alt="Cranberry" width="300" height="300">
+        <h2 class="card__name">Cranberry</h2>
+        <p class="card__desc">Invigorating black tea with cranberry and honey</p>
+        <span class="card__price">$5.00</span>
+      </li>
+      <li class="card" data-category="tea">
+        <img class="card__img" src="img/tea-sea-buckthorn.png" alt="Sea buckthorn" width="300" height="300">
+        <h2 class="card__name">Sea buckthorn</h2>
+        <p class="card__desc">Toning sweet black tea with sea buckthorn, fresh thyme and cinnamon</p>
+        <span class="card__price">$5.50</span>
+      </li>
+
+      <!-- Dessert -->
+      <li class="card" data-category="dessert">
+        <img class="card__img" src="img/dessert-marble-cheesecake.png" alt="Marble cheesecake" width="300" height="300">
+        <h2 class="card__name">Marble cheesecake</h2>
+        <p class="card__desc">Philadelphia cheese with lemon zest on a light sponge cake and red currant jam</p>
+        <span class="card__price">$3.50</span>
+      </li>
+      <li class="card" data-category="dessert">
+        <img class="card__img" src="img/dessert-red-velvet.png" alt="Red velvet" width="300" height="300">
+        <h2 class="card__name">Red velvet</h2>
+        <p class="card__desc">Layer cake with cream cheese frosting</p>
+        <span class="card__price">$4.00</span>
+      </li>
+      <li class="card" data-category="dessert">
+        <img class="card__img" src="img/dessert-cheesecakes.png" alt="Cheesecakes" width="300" height="300">
+        <h2 class="card__name">Cheesecakes</h2>
+        <p class="card__desc">Soft cottage cheese pancakes with sour cream and fresh berries and sprinkled with powdered sugar</p>
+        <span class="card__price">$4.50</span>
+      </li>
+      <li class="card" data-category="dessert">
+        <img class="card__img" src="img/dessert-creme-brulee.png" alt="Creme brulee" width="300" height="300">
+        <h2 class="card__name">Creme brulee</h2>
+        <p class="card__desc">Delicate creamy dessert in a caramel basket with wild berries</p>
+        <span class="card__price">$4.00</span>
+      </li>
+      <li class="card" data-category="dessert">
+        <img class="card__img" src="img/dessert-pancakes.png" alt="Pancakes" width="300" height="300">
+        <h2 class="card__name">Pancakes</h2>
+        <p class="card__desc">Tender pancakes with strawberry jam and fresh strawberries</p>
+        <span class="card__price">$4.50</span>
+      </li>
+      <li class="card" data-category="dessert">
+        <img class="card__img" src="img/dessert-honey-cake.png" alt="Honey cake" width="300" height="300">
+        <h2 class="card__name">Honey cake</h2>
+        <p class="card__desc">Classic honey cake with delicate custard</p>
+        <span class="card__price">$4.50</span>
+      </li>
+      <li class="card" data-category="dessert">
+        <img class="card__img" src="img/dessert-chocolate-cake.png" alt="Chocolate cake" width="300" height="300">
+        <h2 class="card__name">Chocolate cake</h2>
+        <p class="card__desc">Cake with hot chocolate filling and nuts with dried apricots</p>
+        <span class="card__price">$5.50</span>
+      </li>
+            <li class="card" data-category="dessert">
+        <img class="card__img" src="img/dessert-black-forest.png" alt="Black forest" width="300" height="300">
+        <h2 class="card__name">Black forest</h2>
+        <p class="card__desc">A combination of thin sponge cake with cherry jam and light chocolate</p>
+        <span class="card__price">$6.50</span>
+      </li>
+    </ul>
+
+    <button class="show-more" type="button">Show more</button>
+  </div>
+</section>
+
+    </main>
+
+   <footer class="footer" id="contacts">
+  <div class="container footer__inner">
+    <p class="footer__slogan">Sip, Savor, Smile.<br>It's coffee time!</p>
+
+    <div class="footer__contact">
+      <h3 class="footer__title">Contact us</h3>
+      <ul class="footer__list">
+        <li>
+          <a href="https://maps.google.com/?q=8558+Green+Rd,+LA" class="footer__link" target="_blank" rel="noopener">
+            8558 Green Rd., LA
+          </a>
+        </li>
+        <li>
+          <a href="tel:+16035550123" class="footer__link">
+            +1 (603) 555-0123
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <ul class="footer__socials">
+      <li>
+        <a href="https://t.me/" class="footer__social" aria-label="Telegram" target="_blank" rel="noopener">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 3L2 10.5l6 2 2 7 3.5-5 5 4L22 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://instagram.com/" class="footer__social" aria-label="Instagram" target="_blank" rel="noopener">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://facebook.com/" class="footer__social" aria-label="Facebook" target="_blank" rel="noopener">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 3h-3a5 5 0 0 0-5 5v3H4v4h3v6h4v-6h3l1-4h-4V8a1 1 0 0 1 1-1h3V3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+    </div>
+
+  <!-- Модальное окно -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal__overlay" data-close></div>
+    <div class="modal__content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal__close" type="button" aria-label="Закрыть" data-close>✕</button>
+    <img class="modal__image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Product" width="300" height="300">
+      <h2 class="modal__title" id="modal-title">Product</h2>
+      <p class="modal__desc"></p>
+
+   <!-- Размер -->
+<div class="modal__field">
+  <h3 class="modal__field-title">Size</h3>
+  <div class="modal__options" id="modalSizes"></div>
+</div>
+
+<!-- Добавки -->
+<div class="modal__field">
+  <h3 class="modal__field-title">Add-ons</h3>
+  <div class="modal__addons" id="modalAddons">
+    <!-- JS заполнит добавками в зависимости от категории -->
+  </div>
+</div>
+
+<span class="modal__price"></span>
+    </div>
+  </div>
+
+ <script src="js/main.js?v=2"></script>
+</body>
+</html>
