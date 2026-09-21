@@ -382,14 +382,72 @@ section {
 /* ============================================
    App
    ============================================ */
+.app__inner {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.app__content {
+  flex: 1;
+}
+
 .app__text {
-  max-width: 700px;
+  max-width: 500px;
+  margin-bottom: 40px;
   font-size: 18px;
   color: var(--color-text-secondary);
 }
 
-.app .btn {
-  margin-top: 24px;
+.app__image {
+  flex: 1;
+  text-align: right;
+}
+
+.app__image img {
+  width: 100%;
+  max-width: 630px;
+  height: auto;
+}
+
+.app__buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.app-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition);
+}
+
+.app-btn:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+.app-btn__icon {
+  flex-shrink: 0;
+}
+
+.app-btn__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.app-btn__text small {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.app-btn__text strong {
+  font-size: 16px;
+  font-weight: 600;
 }
 
 /* ============================================
@@ -496,6 +554,18 @@ section {
 
   .nav__list {
     gap: 20px;
+  }
+     .app__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .app__buttons {
+    justify-content: center;
+  }
+
+  .app__image {
+    text-align: center;
   }
 }
 
