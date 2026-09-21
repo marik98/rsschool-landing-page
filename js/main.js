@@ -56,3 +56,38 @@ if (tabs.length && cards.length) {
 
   filterCards('coffee');
 }
+// ============================================
+// Слайдер в секции Favourites
+// ============================================
+const slides = document.querySelectorAll('.slider__item');
+const sliderDots = document.querySelectorAll('.slider__dot');
+const prevBtn = document.querySelector('.slider__arrow--prev');
+const nextBtn = document.querySelector('.slider__arrow--next');
+
+let currentSlide = 0;
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('slider__item--active', i === index);
+  });
+  sliderDots.forEach((dot, i) => {
+    dot.classList.toggle('slider__dot--active', i === index);
+  });
+  currentSlide = index;
+}
+
+function nextSlide() {
+  showSlide((currentSlide + 1) % slides.length);
+}
+
+function prevSlide() {
+  showSlide((currentSlide - 1 + slides.length) % slides.length);
+}
+
+if (slides.length) {
+  prevBtn?.addEventListener('click', prevSlide);
+  nextBtn?.addEventListener('click', nextSlide);
+  sliderDots.forEach((dot, i) => {
+    dot.addEventListener('click', () => showSlide(i));
+  });
+}
