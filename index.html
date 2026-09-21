@@ -47,36 +47,57 @@
   </div>
 </section>
 
-            <section class="favourites" id="favourites">
-        <div class="container">
-          <h2 class="section-title section-title--center">Choose your favourite</h2>
+<section class="favourites" id="favourites">
+  <div class="container">
+    <h2 class="section-title section-title--center">Choose your favourite</h2>
 
-          <ul class="slider__list">
-            <li class="slider__item">
-              <img src="img/coffee-slider-1.png" alt="Espresso" width="300" height="300">
-              <h3 class="slider__name">Espresso</h3>
-              <p class="slider__desc">Rich and bold</p>
-              <span class="slider__price">$2.50</span>
-            </li>
-            <li class="slider__item">
-              <img src="img/coffee-slider-2.png" alt="Cappuccino" width="300" height="300">
-              <h3 class="slider__name">Cappuccino</h3>
-              <p class="slider__desc">With milk foam</p>
-              <span class="slider__price">$3.50</span>
-            </li>
-            <li class="slider__item">
-             <img src="img/coffee-slider-3.png" alt="Latte" width="300" height="300">
-              <h3 class="slider__name">Latte</h3>
-              <p class="slider__desc">Smooth and creamy</p>
-              <span class="slider__price">$4.00</span>
-            </li>
-          </ul>
-        </div>
-      </section>
-     <section class="about" id="about">
+    <div class="slider">
+      <button class="slider__arrow slider__arrow--prev" type="button" aria-label="Предыдущий слайд">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <ul class="slider__list">
+        <li class="slider__item slider__item--active">
+          <img class="slider__img" src="img/coffee-slider-1.png" alt="S'mores Frappuccino" width="300" height="300">
+          <h3 class="slider__name">S'mores Frappuccino</h3>
+          <p class="slider__desc">The cool drink made of marshmallow and coffee, milk chocolate and coffee cream, topped with cinnamon</p>
+          <span class="slider__price">$8.50</span>
+        </li>
+        <li class="slider__item">
+          <img class="slider__img" src="img/coffee-slider-2.png" alt="Caramel Macchiato" width="300" height="300">
+          <h3 class="slider__name">Caramel Macchiato</h3>
+          <p class="slider__desc">Fragrant and creamy coffee drink with the taste of caramel, topped with caramel sauce and puffed crumbs</p>
+          <span class="slider__price">$8.50</span>
+        </li>
+        <li class="slider__item">
+          <img class="slider__img" src="img/coffee-slider-3.png" alt="Ice coffee" width="300" height="300">
+          <h3 class="slider__name">Ice coffee</h3>
+          <p class="slider__desc">A cool drink made of ice and coffee, ice cream and milk, and with soy milk</p>
+          <span class="slider__price">$4.50</span>
+        </li>
+      </ul>
+
+      <button class="slider__arrow slider__arrow--next" type="button" aria-label="Следующий слайд">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="slider__dots">
+      <button class="slider__dot slider__dot--active" type="button" aria-label="Слайд 1"></button>
+      <button class="slider__dot" type="button" aria-label="Слайд 2"></button>
+      <button class="slider__dot" type="button" aria-label="Слайд 3"></button>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
   <div class="container">
     <h2 class="section-title">Resource is the perfect and cozy place</h2>
-
+    
     <div class="about__grid">
       <img class="about__photo about__photo--1" src="img/about-1.jpg" alt="Гостья кофейни" width="660" height="590">
       <img class="about__photo about__photo--2" src="img/about-2.jpg" alt="Атмосфера кофейни" width="660" height="430">
