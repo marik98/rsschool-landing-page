@@ -43,13 +43,38 @@
       Behind each of our cups hides an <em>amazing surprise</em>
     </h1>
 
-    <div class="tabs">
-      <ul class="tabs__list">
-        <li><button class="tabs__btn tabs__btn--active" type="button" data-category="coffee">Coffee</button></li>
-        <li><button class="tabs__btn" type="button" data-category="tea">Tea</button></li>
-        <li><button class="tabs__btn" type="button" data-category="dessert">Dessert</button></li>
-      </ul>
-    </div>
+   <div class="tabs">
+  <ul class="tabs__list">
+    <li>
+      <button class="tabs__btn tabs__btn--active" type="button" data-category="coffee">
+        <svg class="tabs__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 8h16l-2 10H6L4 8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M9 8V6a3 3 0 0 1 6 0v2" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        Coffee
+      </button>
+    </li>
+    <li>
+      <button class="tabs__btn" type="button" data-category="tea">
+        <svg class="tabs__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 3v8M8 5v6M16 5v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M4 15h16v3a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        </svg>
+        Tea
+      </button>
+    </li>
+    <li>
+      <button class="tabs__btn" type="button" data-category="dessert">
+        <svg class="tabs__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 13h14v6H5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M7 13V9a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v4" stroke="currentColor" stroke-width="2"/>
+          <circle cx="12" cy="5" r="1" fill="currentColor"/>
+        </svg>
+        Dessert
+      </button>
+    </li>
+  </ul>
+</div>
 
     <ul class="cards">
       <!-- Coffee -->
