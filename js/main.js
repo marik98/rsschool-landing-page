@@ -124,8 +124,6 @@ const modalTitle = modal?.querySelector('.modal__title');
 const modalDesc = modal?.querySelector('.modal__desc');
 const modalPrice = modal?.querySelector('.modal__price');
 
-const sizeInputs = modal ? modal.querySelectorAll('input[name="size"]') : [];
-
 let basePrice = 0;
 
 function updatePrice() {
@@ -142,11 +140,47 @@ function updatePrice() {
 }
 
 function resetOptions() {
-  const defaultSize = modal.querySelector('input[name="size"][value="200"]');
-  if (defaultSize) defaultSize.checked = true;
+  // Ставим первый размер по умолчанию
+  const firstSize = modal.querySelector('input[name="size"]');
+  if (firstSize) firstSize.checked = true;
 
   modal.querySelectorAll('input[name="addon"]').forEach((cb) => {
     cb.checked = false;
+  });
+}
+// Размеры по категориям
+const SIZES = {
+  coffee: [
+    { value: '200', label: '200 ml', price: 0, default: true },
+    { value: '300', label: '300 ml', price: 0.5 },
+    { value: '400', label: '400 ml', price: 1 },
+  ],
+  tea: [
+    { value: '200', label: '200 ml', price: 0, default: true },
+    { value: '300', label: '300 ml', price: 0.5 },
+    { value: '400', label: '400 ml', price: 1 },
+  ],
+  dessert: [
+    { value: '50', label: '50 g', price: 0, default: true },
+    { value: '100', label: '100 g', price: 0.5 },
+    { value: '200', label: '200 g', price: 1 },
+  ],
+};
+
+const sizesContainer = document.getElementById('modalSizes');
+
+function renderSizes(category) {
+  const list = SIZES[category] || [];
+  sizesContainer.innerHTML = list.map((item) => `
+    <label class="modal__option">
+      <input type="radio" name="size" value="${item.value}" data-price="${item.price}" ${item.default ? 'checked' : ''}>
+      <span>${item.label}</span>
+    </label>
+  `).join('');
+
+  // Переподключаем слушатели
+  sizesContainer.querySelectorAll('input[name="size"]').forEach((input) => {
+    input.addEventListener('change', updatePrice);
   });
 }
 // Добавки по категориям
@@ -196,6 +230,7 @@ function openModal(card) {
   modalTitle.textContent = name ? name.textContent : '';
   modalDesc.textContent = desc ? desc.textContent : '';
 
+  renderSizes(category); 
   renderAddons(category);
 
   basePrice = priceEl ? parseFloat(priceEl.textContent.replace('$', '')) : 0;
@@ -228,6 +263,4 @@ if (modal) {
       closeModal();
     }
   });
-
-  sizeInputs.forEach((input) => input.addEventListener('change', updatePrice));
 }
