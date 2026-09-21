@@ -866,6 +866,30 @@ section {
   .app__image {
     text-align: center;
   }
+     .slider {
+    gap: 20px;
+  }
+
+  .slider__list {
+    min-height: 420px;
+  }
+
+  .slider__img {
+    max-width: 220px;
+  }
+
+  .slider__name {
+    font-size: 20px;
+  }
+
+  .slider__desc {
+    font-size: 14px;
+  }
+
+  .slider__arrow {
+    width: 44px;
+    height: 44px;
+  }
 }
 @media (max-width: 480px) {
   .section-title {
