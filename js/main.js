@@ -125,7 +125,6 @@ const modalDesc = modal?.querySelector('.modal__desc');
 const modalPrice = modal?.querySelector('.modal__price');
 
 const sizeInputs = modal ? modal.querySelectorAll('input[name="size"]') : [];
-const addonInputs = modal ? modal.querySelectorAll('input[name="addon"]') : [];
 
 let basePrice = 0;
 
@@ -139,28 +138,65 @@ function updatePrice() {
   });
 
   const total = basePrice + sizeAdd + addonsAdd;
-  modalPrice.textContent = `$${total.toFixed(2)}`;
+  modalPrice.textContent = `Total: $${total.toFixed(2)}`; // ← "Total:" добавлен
 }
 
 function resetOptions() {
-  const smallSize = modal.querySelector('input[name="size"][value="s"]');
-  if (smallSize) smallSize.checked = true;
+  const defaultSize = modal.querySelector('input[name="size"][value="200"]');
+  if (defaultSize) defaultSize.checked = true;
 
   modal.querySelectorAll('input[name="addon"]').forEach((cb) => {
     cb.checked = false;
   });
 }
+// Добавки по категориям
+const ADDONS = {
+  coffee: [
+    { value: 'sugar', label: 'Sugar', price: 0.3 },
+    { value: 'cinnamon', label: 'Cinnamon', price: 0.4 },
+    { value: 'syrup', label: 'Syrup', price: 0.5 },
+  ],
+  tea: [
+    { value: 'sugar', label: 'Sugar', price: 0.3 },
+    { value: 'lemon', label: 'Lemon', price: 0.4 },
+    { value: 'syrup', label: 'Syrup', price: 0.5 },
+  ],
+  dessert: [
+    { value: 'berries', label: 'Berries', price: 0.5 },
+    { value: 'nuts', label: 'Nuts', price: 0.5 },
+    { value: 'jam', label: 'Jam', price: 0.4 },
+  ],
+};
 
+const addonsContainer = document.getElementById('modalAddons');
+
+function renderAddons(category) {
+  const list = ADDONS[category] || [];
+  addonsContainer.innerHTML = list.map((item) => `
+    <label class="modal__addon">
+      <input type="checkbox" name="addon" value="${item.value}" data-price="${item.price}">
+      <span>${item.label}</span>
+    </label>
+  `).join('');
+
+  // Переподключаем слушатели к новым чекбоксам
+  addonsContainer.querySelectorAll('input[name="addon"]').forEach((input) => {
+    input.addEventListener('change', updatePrice);
+  });
+}
 function openModal(card) {
   const img = card.querySelector('img');
   const name = card.querySelector('.card__name');
   const desc = card.querySelector('.card__desc');
   const priceEl = card.querySelector('.card__price');
+  const category = card.dataset.category;
 
   modalImage.src = img ? img.src : '';
   modalImage.alt = img ? img.alt : '';
   modalTitle.textContent = name ? name.textContent : '';
   modalDesc.textContent = desc ? desc.textContent : '';
+
+  renderAddons(category);
 
   basePrice = priceEl ? parseFloat(priceEl.textContent.replace('$', '')) : 0;
 
@@ -194,5 +230,4 @@ if (modal) {
   });
 
   sizeInputs.forEach((input) => input.addEventListener('change', updatePrice));
-  addonInputs.forEach((input) => input.addEventListener('change', updatePrice));
 }
