@@ -37,12 +37,47 @@ if (themeToggle) {
 // ============================================
 const tabs = document.querySelectorAll('.tabs__btn');
 const cards = document.querySelectorAll('.card');
+const showMoreBtn = document.querySelector('.show-more');
+const MOBILE_BREAKPOINT = 768;
+
+let currentCategory = 'coffee';
+
+function applyFilters() {
+  const isMobile = window.innerWidth <= MOBILE_BREAKPOINT;
+  const categoryCards = [...cards].filter((c) => c.dataset.category === currentCategory);
+  const shouldHide = isMobile && !showMoreBtn?.classList.contains('is-expanded');
+
+  categoryCards.forEach((card, index) => {
+    const visible = !shouldHide || index < 4;
+    card.hidden = !visible;
+  });
+
+  // Скрываем карточки других категорий
+  cards.forEach((card) => {
+    if (card.dataset.category !== currentCategory) {
+      card.hidden = true;
+    }
+  });
+
+  // Логика кнопки
+  if (showMoreBtn) {
+    const hasMore = categoryCards.length > 4;
+    const isExpanded = showMoreBtn.classList.contains('is-expanded');
+
+    if (!isMobile || !hasMore || isExpanded) {
+      showMoreBtn.hidden = true;
+    } else {
+      showMoreBtn.hidden = false;
+    }
+  }
+}
 
 function filterCards(category) {
-  cards.forEach((card) => {
-    const isMatch = card.dataset.category === category;
-    card.hidden = !isMatch;
-  });
+  currentCategory = category;
+  if (showMoreBtn) {
+    showMoreBtn.classList.remove('is-expanded');
+  }
+  applyFilters();
 }
 
 if (tabs.length && cards.length) {
@@ -54,6 +89,18 @@ if (tabs.length && cards.length) {
     });
   });
 
+  // Клик по кнопке Show more
+  if (showMoreBtn) {
+    showMoreBtn.addEventListener('click', () => {
+      showMoreBtn.classList.add('is-expanded');
+      applyFilters();
+    });
+  }
+
+  // При изменении ширины окна — пересчитываем
+  window.addEventListener('resize', applyFilters);
+
+  // По умолчанию — Coffee
   filterCards('coffee');
 }
 // ============================================
