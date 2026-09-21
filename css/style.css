@@ -280,8 +280,8 @@ section {
 .footer {
   padding: 60px 0;
   margin-top: 60px;
-  background-color: var(--color-text);
-  color: var(--color-bg);
+  background-color: #403f3d;
+  color: #e1d4c9;
 }
 
 .footer__inner {
