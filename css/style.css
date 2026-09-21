@@ -931,3 +931,7 @@ section {
     font-size: 14px;
   }
 }
+/* Логотип в тёмной теме — светлый */
+body.dark-theme .logo img {
+  filter: brightness(0) invert(1);
+}
