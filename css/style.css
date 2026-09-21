@@ -547,6 +547,9 @@ section {
   font-weight: 600;
   color: var(--color-text);
 }
+.card[hidden] {
+  display: none;
+}
 
 /* ============================================
    Адаптивность
