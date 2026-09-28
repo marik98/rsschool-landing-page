@@ -957,9 +957,9 @@ section {
     font-size: 14px;
   }
 }
-/* Логотип в тёмной теме — светлый */
-body.dark-theme .logo img {
-  filter: brightness(0) invert(1);
+/* Логотип в тёмной теме — светлая версия */
+body.dark-theme .logo__img {
+  content: url("../img/logo-light.png");
 }
 /* Блокировка прокрутки при открытом бургере */
 body.menu-open,
