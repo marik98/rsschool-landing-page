@@ -961,3 +961,16 @@ section {
 body.dark-theme .logo img {
   filter: brightness(0) invert(1);
 }
+/* Блокировка прокрутки при открытом бургере */
+body.menu-open {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+html.menu-open {
+  overflow: hidden;
+}
