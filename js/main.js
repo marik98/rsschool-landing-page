@@ -41,33 +41,20 @@ if (themeToggle) {
 const burger = document.querySelector('.burger');
 const nav = document.querySelector('.nav');
 
-let scrollPosition = 0;
-
 function openMenu() {
-  scrollPosition = window.scrollY;
-
-  // Добавляем классы — CSS сам заблокирует прокрутку
   document.documentElement.classList.add('menu-open');
   document.body.classList.add('menu-open');
-  document.body.style.top = `-${scrollPosition}px`;
-
   nav.classList.add('is-open');
   burger.classList.add('is-open');
   burger.setAttribute('aria-expanded', 'true');
 }
 
 function closeMenu() {
-  // Убираем классы
   document.documentElement.classList.remove('menu-open');
   document.body.classList.remove('menu-open');
-  document.body.style.top = '';
-
   nav.classList.remove('is-open');
   burger.classList.remove('is-open');
   burger.setAttribute('aria-expanded', 'false');
-
-  // Возвращаем на прежнюю позицию
-  window.scrollTo(0, scrollPosition);
 }
 
 function toggleMenu() {
