@@ -41,20 +41,36 @@ if (themeToggle) {
 const burger = document.querySelector('.burger');
 const nav = document.querySelector('.nav');
 
+let scrollPosition = 0;
+
 function openMenu() {
+  scrollPosition = window.scrollY;
   nav.classList.add('is-open');
   burger.classList.add('is-open');
   burger.setAttribute('aria-expanded', 'true');
-  document.documentElement.style.overflow = 'hidden';
-  document.body.style.overflow = 'hidden';
+
+  // Фиксируем body — прокрутка гарантированно блокируется
+  document.body.style.position = 'fixed';
+  document.body.style.top = `-${scrollPosition}px`;
+  document.body.style.left = '0';
+  document.body.style.right = '0';
+  document.body.style.width = '100%';
 }
 
 function closeMenu() {
   nav.classList.remove('is-open');
   burger.classList.remove('is-open');
   burger.setAttribute('aria-expanded', 'false');
-  document.documentElement.style.overflow = '';
-  document.body.style.overflow = '';
+
+  // Возвращаем body в нормальное состояние
+  document.body.style.position = '';
+  document.body.style.top = '';
+  document.body.style.left = '';
+  document.body.style.right = '';
+  document.body.style.width = '';
+
+  // Возвращаем пользователя на ту же позицию
+  window.scrollTo(0, scrollPosition);
 }
 
 function toggleMenu() {
@@ -68,14 +84,12 @@ if (burger && nav) {
     link.addEventListener('click', closeMenu);
   });
 
-  // Escape закрывает бургер
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && nav.classList.contains('is-open')) {
       closeMenu();
     }
   });
 
-  // При увеличении окна — закрываем бургер автоматически
   window.addEventListener('resize', () => {
     if (window.innerWidth > 768 && nav.classList.contains('is-open')) {
       closeMenu();
