@@ -339,15 +339,15 @@ section {
   justify-content: center;
   width: 44px;
   height: 44px;
-  border: 1px solid var(--color-bg);
+  border: 1px solid #e1d4c9;
   border-radius: 50%;
-  color: var(--color-bg);
+  color: #e1d4c9;
   transition: background-color var(--transition), color var(--transition);
 }
 
 .footer__social:hover {
-  background-color: var(--color-bg);
-  color: var(--color-text);
+  background-color: #e1d4c9;
+  color: #403f3d;
 }
 
 /* ============================================
