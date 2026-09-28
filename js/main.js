@@ -45,14 +45,16 @@ function openMenu() {
   nav.classList.add('is-open');
   burger.classList.add('is-open');
   burger.setAttribute('aria-expanded', 'true');
-  document.body.style.overflow = 'hidden'; // блокируем прокрутку
+  document.documentElement.style.overflow = 'hidden';
+  document.body.style.overflow = 'hidden';
 }
 
 function closeMenu() {
   nav.classList.remove('is-open');
   burger.classList.remove('is-open');
   burger.setAttribute('aria-expanded', 'false');
-  document.body.style.overflow = ''; // восстанавливаем прокрутку
+  document.documentElement.style.overflow = '';
+  document.body.style.overflow = '';
 }
 
 function toggleMenu() {
